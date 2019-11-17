@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <h1 class="display-2">Star Recommender</h1>
+</head>
+  <body>
+        <hr>
+        </br>
+        </br>
+        <div class = 'container'>
+          <div class = 'row'>
+            <div class = 'col-6'>
+              <form method="POST" action="/predict">
+                <div class = "form-group"
+                  <label for = "name"><p class = "font-weight-bold">Your First Name</label>
+                  <input type = "text" name = "name">
+                  <small id = "nameHelp" class = "form-text text -muted"> Enter your name</small>
+                  </div>
+                  <div class = "form-group"
+                    <label for = "spot"><p class = "font-weight-bold">Your Constellation</label>
+                    <input type = "text" name = "spot">
+                    <small id = "nameHelp" class = "form-text text -muted"> Enter your zodaic constellation</small>
+                    </div>
+                    <div class = "form-group"
+                      <label for = "speed"><p class = "font-weight-bold">Your speed</label>
+                      <input type = "text" name = "speed">
+                      <small id = "nameHelp" class = "form-text text -muted"> On a scale of 0 [least] to 4 [most], if you were a star, how speedy are you?</small>
+                      </div>
+                      <div class = "form-group"
+                        <label for = "bright"><p class = "font-weight-bold">Brightness</label>
+                        <input type = "text" name = "bright">
+                        <small id = "nameHelp" class = "form-text text -muted"> On a scale of 0 [least] to 4 [most], if you were a star, how bright are you?</small>
+                        </div>
+                        <div class = "form-group"
+                          <label for = "describe"><p class = "font-weight-bold">Describe yourself</label>
+                          <input type = "text" name = "describe">
+                          <small id = "nameHelp" class = "form-text text -muted"> Describe yourself in around four words</small>
+                          </div>
+                          <input class='btn btn-primary' type='submit' value='Submit'>
+              </div>
+              </div>
+  </body>
+
+</html>
