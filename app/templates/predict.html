@@ -1,43 +1,235 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+    /* ==============================================================================================
+SED Innovations
+https://sed.am
+https://mkrtchyan.ga
+================================================================================================= */
+    
+    @keyframes move-twink-back {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: -10000px 5000px;
+        }
+    }
+    
+    @-webkit-keyframes move-twink-back {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: -10000px 5000px;
+        }
+    }
+    
+    @-moz-keyframes move-twink-back {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: -10000px 5000px;
+        }
+    }
+    
+    @-ms-keyframes move-twink-back {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: -10000px 5000px;
+        }
+    }
+    
+    @keyframes move-clouds-back {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: 10000px 0;
+        }
+    }
+    
+    @-webkit-keyframes move-clouds-back {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: 10000px 0;
+        }
+    }
+    
+    @-moz-keyframes move-clouds-back {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: 10000px 0;
+        }
+    }
+    
+    @-ms-keyframes move-clouds-back {
+        from {
+            background-position: 0;
+        }
+        to {
+            background-position: 10000px 0;
+        }
+    }
+    
+    .block {
+        border: 1px solid red;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .rectangle {
+        font-family: Helvetica;
+        border-radius: 10px;
+        /* regular */
+        color: white;
+        height: 350px;
+        width: 250px;
+        margin: 0 1.5%;
+        background: black;
+        opacity: 0.8;
+        /* Transparent Background 50% */
+        float: left;
+        padding: 5px 10px;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    
+    .headrec {
+        font-family: Helvetica;
+        border-radius: 10px;
+        /* regular */
+        color: #25A2B7;
+        height: auto;
+        width: 250px;
+        margin: 0 1.5%;
+        background: black;
+        opacity: 0.8;
+        /* Transparent Background 70% */
+        float: left;
+        padding: 5px 10px;
+    }
+    
+    .stars,
+    .twinkling,
+    .clouds {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: -1;
+        height: 100%;
+        display: block;
+    }
+    
+    .stars {
+        background: #000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+        position: fixed;
+        z-index: -2;
+        height: 100%;
+    }
+    
+    .twinkling {
+        position: fixed;
+        background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+        z-index: -2;
+        -moz-animation: move-twink-back 200s linear infinite;
+        -ms-animation: move-twink-back 200s linear infinite;
+        -o-animation: move-twink-back 200s linear infinite;
+        -webkit-animation: move-twink-back 200s linear infinite;
+        animation: move-twink-back 200s linear infinite;
+    }
+    
+    .clouds {
+        background: transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+        z-index: -1;
+        -moz-animation: move-clouds-back 200s linear infinite;
+        -ms-animation: move-clouds-back 200s linear infinite;
+        -o-animation: move-clouds-back 200s linear infinite;
+        -webkit-animation: move-clouds-back 200s linear infinite;
+        animation: move-clouds-back 200s linear infinite;
+    }
+</style>
+<font color="white">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <h1 class="display-2">Recommendation Results</h1>
-      </head>
-      <body>
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm">
-                    <p class="lead">
-                  <p class="card text"><h1><frame marginwidth="40"><font color="black"><font size = 2.5> {{(prediction)}}</font></h1></p>
-          </div>
-          <div class="col-sm">
-            <p class="lead">
-            </p>
-          </div>
-          <div class="col-sm">
-            <p><strong>How to See Your Star &amp; Your Most Similar Stars:&nbsp;</strong></p>
-            <p><em><strong>Step 1:&nbsp;</strong></em>Using the right ascension and declination values, head on over to
-              <a href="http://simbad.u-strasbg.fr/simbad/sim-fcoo" rel="noopener noreferrer" target="_blank">this website</a>.&nbsp;
-            </p>
-            <p><strong><em>Step 2:&nbsp;</em></strong>Then type in the first text box: <em>right ascension, declination</em></p>
-            <p><em><strong>Step 3:</strong></em> Although you can change the system, leave the epoch and equinox values.</p>
-            <p><em><strong>Step 4:</strong></em> Press preview or submit query to see the star</p>
-            <p><strong>
-            About:&nbsp;</strong>This website and associated machine learning model was created by Joost VanderBorgh. Current version may be buggy until optimization is complete. &nbsp;
-      <a href="https://www.thedp.com/article/2019/11/penn-law-carey-foundation-donation-renaming" rel="noopener noreferrer" target="_blank">I may accept a 125 million dollar donation to rename it to whatever you wish :D </a>&nbsp;
-      </p>
-          </div>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <h3 class="display-4" style="margin-left: 20px"> Recommendation Results</h3>
+    </head>
+
+    <body>
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="clouds"></div>
+
+
+        <div class="headrec">
+            <center>
+                <p>Your Star</p>
+            </center>
+
+            <div class="rectangle">
+                <center>
+                    <p>{{(prediction[0])}}</p>
+                </center>
+                <center><a class="btn btn-info" href="{{(prediction[3])}}" role="button">See Your Star</a></center>
+            </div>
         </div>
-      </div>
-      <br>
-      <center><img src="https://i.dlpng.com/static/png/1647762_preview_preview.png" height = "100" width = "100"></center>
-      <br>
-          <center><a class="btn btn-secondary" href="acknowledgements.html" role="button">Acknowledgements</a></center>
-      </body>
+
+
+        </div>
+        <div class="headrec">
+            <center>
+                <p>Your Most Similar Star</p>
+            </center>
+            <div class="rectangle">
+                <center>
+                    <p> {{(prediction[1])}}</p>
+                </center>
+                <center><a class="btn btn-info" href="{{(prediction[4])}}" role="button">See Your Most Similar Star</a></center>
+            </div>
+        </div>
+
+        <div class="headrec">
+            <center>
+                <p>
+                    <heavy>Your Second Most Similar Star</p>
+                </heavy>
+            </center>
+            <div class="rectangle">
+                <center>
+                    <p> {{(prediction[2])}}</p>
+                </center>
+                <center><a class="btn btn-info" href="{{(prediction[5])}}" role="button">See Your Second Most Similar Star</a></center>
+            </div>
+        </div>
+        <div class="rectangle">
+            <thin> About: This website and associated machine learning model was created by Joost VanderBorgh to promote science</thin>
+            <br>
+            <center><a class="btn btn-secondary" href="acknowledgements.html" role="button">Further Reading & Acknowledgements</a></center>
+        </div>
+
+</font>
+</p>
+</div>
+</div>
+</div>
+
+</body>
+
 </html>

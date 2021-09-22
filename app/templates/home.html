@@ -1,45 +1,217 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <h1 class="display-2">Star Recommender</h1>
+    <style>
+        /* ==============================================================================================
+SED Innovations
+https://sed.am
+https://mkrtchyan.ga
+================================================================================================= */
+        
+        @keyframes move-twink-back {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: -10000px 5000px;
+            }
+        }
+        
+        @-webkit-keyframes move-twink-back {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: -10000px 5000px;
+            }
+        }
+        
+        @-moz-keyframes move-twink-back {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: -10000px 5000px;
+            }
+        }
+        
+        @-ms-keyframes move-twink-back {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: -10000px 5000px;
+            }
+        }
+        
+        @keyframes move-clouds-back {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 10000px 0;
+            }
+        }
+        
+        @-webkit-keyframes move-clouds-back {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 10000px 0;
+            }
+        }
+        
+        @-moz-keyframes move-clouds-back {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 10000px 0;
+            }
+        }
+        
+        @-ms-keyframes move-clouds-back {
+            from {
+                background-position: 0;
+            }
+            to {
+                background-position: 10000px 0;
+            }
+        }
+        
+        .stars,
+        .twinkling,
+        .clouds {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: -1;
+            height: 100%;
+            display: block;
+        }
+        
+        .stars {
+            background: #000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+            z-index: -3;
+        }
+        
+        .twinkling {
+            background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+            z-index: -2;
+            -moz-animation: move-twink-back 200s linear infinite;
+            -ms-animation: move-twink-back 200s linear infinite;
+            -o-animation: move-twink-back 200s linear infinite;
+            -webkit-animation: move-twink-back 200s linear infinite;
+            animation: move-twink-back 200s linear infinite;
+        }
+        
+        .clouds {
+            background: transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+            z-index: -1;
+            -moz-animation: move-clouds-back 200s linear infinite;
+            -ms-animation: move-clouds-back 200s linear infinite;
+            -o-animation: move-clouds-back 200s linear infinite;
+            -webkit-animation: move-clouds-back 200s linear infinite;
+            animation: move-clouds-back 200s linear infinite;
+        }
+        
+        .indent {
+            margin-left: 10px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <font color="white">
+        <h2 class="display-2" style="margin-left: 40px"> Star Recommender</h2>
+        <h2 class="display-2" style="margin-left: 40px"> What the Lonely Planet is for places, the Lonely Universe is for stars</h2>
+    </font>
 </head>
-  <body>
-        <hr>
-        </br>
-        </br>
-        <div class = 'container'>
-          <div class = 'row'>
-            <div class = 'col-6'>
-              <form method="POST" action="/predict">
-                <div class = "form-group"
-                  <label for = "name"><p class = "font-weight-bold">Your First Name</label>
-                  <input type = "text" name = "name">
-                  <small id = "nameHelp" class = "form-text text -muted"> Enter your name</small>
-                  </div>
-                  <div class = "form-group"
-                    <label for = "spot"><p class = "font-weight-bold">Your Constellation</label>
-                    <input type = "text" name = "spot">
-                    <small id = "nameHelp" class = "form-text text -muted"> Enter your zodaic constellation</small>
-                    </div>
-                    <div class = "form-group"
-                      <label for = "speed"><p class = "font-weight-bold">Your speed</label>
-                      <input type = "text" name = "speed">
-                      <small id = "nameHelp" class = "form-text text -muted"> On a scale of 0 [least] to 4 [most], if you were a star, how speedy are you?</small>
-                      </div>
-                      <div class = "form-group"
-                        <label for = "bright"><p class = "font-weight-bold">Brightness</label>
-                        <input type = "text" name = "bright">
-                        <small id = "nameHelp" class = "form-text text -muted"> On a scale of 0 [least] to 4 [most], if you were a star, how bright are you?</small>
-                        </div>
-                        <div class = "form-group"
-                          <label for = "describe"><p class = "font-weight-bold">Describe yourself</label>
-                          <input type = "text" name = "describe">
-                          <small id = "nameHelp" class = "form-text text -muted"> Describe yourself in around four words</small>
-                          </div>
-                          <input class='btn btn-primary' type='submit' value='Submit'>
-              </div>
-              </div>
-  </body>
+
+<body>
+    <hr>
+    </br>
+    </br>
+
+    <div class='container-fluid'>
+        <div class='row'>
+            <div class='indent'>
+                <font color="white">
+                    <div class='col-6'>
+                        <form method="POST" action="/predict">
+                            <div class="form-group" <label for="name">
+                                <p class="font-weight-bold">Your First Name</label>
+                </font>
+                <input type="text" color="black" name="name" required>
+                <font color="white">
+
+                </font>
+
+                </div>
+
+                <font color="white">
+                    <div class="form-group" <label for="spot">
+                        <p class="font-weight-bold">Your Constellation</label>
+                </font>
+                <select name="spot" required>
+                            <option value = "Aries" selected>Aries</option>
+                            <option value = "Taurus">Taurus</option>
+                            <option value = "Gemini">Gemini</option>
+                            <option value = "Cancer">Cancer</option>
+                            <option value = "Leo">Leo</option>
+                            <option value = "Virgo">Virgo</option>
+                            <option value = "Libra">Libra</option>
+                            <option value = "Scorpio">Scorpio</option>
+                            <option value = "Sagittarius">Sagittarius</option>
+                            <option value = "Capricorn">Capricorn</option>
+                             <option value = "Aquarius">Aquarius</option>
+                            <option value = "Pisces">Pisces</option>
+                        </select>
+                </div>
+
+                <font color="white">
+                    <div class="form-group" <label for="speed">
+                        <p class="font-weight-bold">Your distance</label>
+                </font>
+                <input type="number" id="number" name="speed" value="1" min="0" max="4" required>
+                <font color="white">
+                    <small id="nameHelp" class="form-text text -muted"> On a scale of 0 [very close] to 4 [very distant], if you were a star, how far are you from Earth?</small>
+                </font>
+                </div>
+                <font color="white">
+                    <div class="form-group" <label for="bright">
+                        <p class="font-weight-bold">Brightness</label>
+                </font>
+                <input type="number" id="number" name="bright" value="1" min="0" max="4" required>
+
+                <font color="white">
+                    <small id="nameHelp" class="form-text text -muted"> On a scale of 0 [least] to 4 [most], if you were a star, how bright are you?</small>
+                </font>
+                </div>
+                <font color="white">
+                    <div class="form-group" <label for="describe">
+                        <p class="font-weight-bold">Describe yourself</label>
+                </font>
+                <input type="text" color="black" name="describe" maxlength="45" required>
+                <font color="white">
+                    <small id="nameHelp" class="form-text text -muted"> Describe yourself in four words</small>
+                </font>
+                </div>
+                <input class='btn btn-primary' type='submit' value='Submit'>
+                </font>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="clouds"></div>
+
+</body>
 
 </html>
