@@ -3,9 +3,9 @@ import joblib
 
 
 def value(name, spot, speed, bright, describe):
-    ind = joblib.load("/home/joostvan/StarRec/indices_model.pkl", mmap_mode = 'r')
-    dis = joblib.load("/home/joostvan/StarRec/dis_model.pkl", mmap_mode = 'r')
-    df = pd.read_csv("/home/joostvan/StarRec/HYG-Database-master/df_small_v1.csv")
+    ind = joblib.load("indices_model.pkl", mmap_mode = 'r')
+    dis = joblib.load("dis_model.pkl", mmap_mode = 'r')
+    df = pd.read_csv("df_small_v1.csv")
 
     #what is your name
     speed = round(speed)
