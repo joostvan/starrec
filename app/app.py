@@ -1,6 +1,6 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-import build_model
+from build_model.py import value
 
 # initialize a new Flask app
 app = Flask(__name__)
